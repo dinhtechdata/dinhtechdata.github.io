@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<!--THIS IS THE NAME ON THE BROWSER-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DinhTechData</title>
+  <link rel="stylesheet" href="../all_stylesheet/projects.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Sofia&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/fc71e2e61e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- CREATING NAVIGATION MENU -->
+
+  <nav class="navbar">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+     <div class="navbar__container">  <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
+
+        <!--Title w/ navigation button-->
+      <div class="navbar__title">
+       <a href="../index.html" class="navbar__text"> <!--a#navbar + 'tab' provides id--> <!-- place image of logo HERE-->
+          Tiffany's Portfolio
+       </a>
+      </div>
+
+        <!--Stuff for the mobile platform-->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+        <!--Menu w/ navigation -->
+      <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
+        <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+            <a href="../resume.html" class="navbar__links"> <!-- create one link for each menu item -->
+               Resume
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="../projects.html" class="navbar__links"> <!-- place link to python shiny tab -->
+               Projects
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="../aboutme.html" class="navbar__links">
+               About Me
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!--NAVIGATION UNDERNEATH MENU-->
+  <nav class="tab__header">
+      <ol class="directory">
+          <li class="directory__tab">
+              <a href="../index.html" class="directory__link">
+                  <span>
+                      Home
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current_directory">
+                <a href="../projects.html" class="directory__link">
+                  <span>
+                      Projects
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current">
+              <b>
+                Imaging-Based Malaria Classification
+              </b>
+          </li>
+      </ol>
+  </nav>
+
+<!--  ADD CONTENTS HERE   -->
+  <div id="background"></div>
+  <div class="main">
+
+    <div class="TOC">
+        <nav id="navigation">
+            <ul id="navList">
+                <li> <a href="#background__content" class="heading"> Background </a></li>
+                <li> <a href="#dataset" class="heading"> Dataset </a></li>
+                <li><a href="#metrics" class="heading"> Evaluation Metrics</a></li>
+                <li><a href="#performance" class="heading"> Model Performance</a></li>
+                <li> <a href="#conclusion__content" class="heading"> Conclusion </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+    <h2> Boosting Malaria Diagnostics with Image Recognition Algorithms </h2>
+        <div class="summary" id="background__content">
+            <h3>Background</h3>
+            <div class="pictures">
+                <img src="../img/img__malaria__katerynakoni.png" alt="kateryna_koni">
+                <p class="caption"> Image Credit: Kateryna Koni</p>
+            </div>
+            <p>
+                Malaria is a life-threatening disease caused by parasites that can be transmitted to humans through a mosquito bite. Although preventable and curable, there were approximately 247 million reported cases and 619,000 deaths by malaria were reported in 2021. 80% of these reported deaths were attributed to children under 5 in the African region. Malaria remains to pose a significant global health challenge, impacting millions of people annually.
+            </p>
+            <p>
+                There are various diagnostic methods that healthcare professionals utilize to diagnose for malaria. One of them consist of manually identifying the presence of the parasite in patient’s blood through microscopic examination of a blood smear. In microscopic examination, a blood sample is stained and examined under a microscope to identify and quantify the parasites. It is important to perform microscopic examination to accurately diagnose the severity of the infection and determine the appropriate course of treatment for the patient.
+            </p>
+            <p>
+                However, microscopic examination can be taxing for several reason. This process demands well-trained laboratory personnel to accurately identify and differentiate the various stages of the malaria parasite in the blood sample. Secondly, this is a tedious and time-consuming process to carefully prepare, stain, and observe each blood smear. Given the amount of workload and pressure, this intensive process can also be taxing to many healthcare professionals especially in areas with high malaria prevalence or resource-limited settings.
+            </p>
+            <p>
+                The aim of this project is to create an efficient and dependable diagnostic test that can alleviate the burden associated with this taxing process. Our objective is to use deep learning algorithms to identify malaria-causing parasites from cell images of blood smears in hope to offering a faster and more automated approach to diagnosis.
+            </p>
+        </div>
+
+        <div class="summary" id="dataset">
+            <h3> Dataset </h3>
+            <p>
+                The original dataset consisted of 27,560 cell images sourced from Kaggle, with equal numbers of malaria-infected and uninfected samples (13,780 each). The expected outcome was binary - either infected with malaria or uninfected. To augment the data, infected cell images were duplicated through several transformation: one unchanged original, two rotated, and one blurred version. Similarly, 2 rotated copies were generated for each uninfected cell image, in addition to the originals. This augmentation increased the total number of cell images in the dataset to a total of 111,885. Finally, each image was normalized by rescaling pixel values to the 0-1 range by diving by 255.
+            </p>
+            <p>
+                By programmatically expanding the dataset through transformation such as rotations and blurs, this boosted the size and diversity of the dataset used for training, validating, and testing.
+                The inclusion of rotated and blurred images enhanced the model’s efficacy by emulating the inherent variation in cell imaging; thus, facilitating more accurate malaria detection. As a result, this supplementary data improved the model’s performance and generalizability by reducing overfitting.
+                The dataset was partitioned with 69% used for training the model, 14% for validation, and 17% for testing the final model performance.
+                The table below details the split of the overall dataset.
+
+            </p>
+            <div class="table">
+                <table class="data_table">
+                    <tr>
+                        <th>Dataset</th>
+                        <th># of Images in dataset </th>
+                    </tr>
+                    <tr> <td class="left_table">Training</td> <td>77,162</td> </tr>
+                    <tr> <td class="left_table">Validation</td> <td>15,432</td> </tr>
+                    <tr> <td class="left_table">Test</td> <td>19,291</td> </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="summary" id="metrics">
+            <h3>Evaluation Metrics</h3>
+            <p>
+                Two evaluation metrics was used to determine the performance of our models: Training Accuracy and Binary Cross Entropy Loss. Training accuracy measured how well the model classified images during the training process, providing insight into our model’s capability. The binary cross entropy loss showed how closely the model predictions aligned with the true label values, indicating how well the model fit the training and validation data. The lower the loss value, the better fitted our models were.
+            </p>
+        </div>
+
+        <div class="summary" id="performance">
+            <h3>Model Performance</h3>
+            <h5>Training Performance</h5>
+            <p>
+                Several neural network architectures were tested, with the best performance coming from models utilizing regularization techniques like dropout and L2 regularization to reduce overfitting. Batch normalization also improved the results.
+                A basic convolutional neural network architecture was used to start and optimized the model by experimenting with different parameters and training configurations. The optimal base model contained convolutional layers for feature extraction followed by dense layers of 32 and 1 nodes with ReLU and sigmoid activations, respectively. This achieved 97% training accuracy and a binary cross entropy loss of 0.077.
+            </p>
+            <p>
+                With the training dataset, different optimizers, epochs, and weight initialization were tested to find the best CNN model.
+                Testing different optimizers, the Adam optimizer achieved the best performance with 97% accuracy and 0.077 loss. Increasing training epochs to 16 further improved results to 98.9% accuracy and 0.032 loss. Additionally, using random weight initialization outperformed zeros or He initialization, reaching 98% accuracy and 0.058 loss.
+                Below are the tables where we tested different parameters to find the best model.
+            </p>
+            <div class="image-row">
+                <img src="../img/training different optimizers.png" alt="Optimizer">
+                <img src="../img/training different epochs.png" alt="Epochs">
+                <img src="../img/Training different weights.png" alt="Weights" class="centered">
+            </div>
+
+            <p>
+                Through this iterative optimization, we determined the best model uses the Adam optimizer, trains for 16 epochs, and initializes weights randomly. With these optimal hyperparameters, the CNN model attained excellent performance on the malaria cell image training data.
+                Moving forward, we need to evaluate the model on the validation set to check for overfitting and ensure it generalizes well to new data. Additional regularization may be required to improve robustness.
+            </p>
+            <div class="pictures">
+                <img src="../img/best model training.png" alt="training__best">
+            </div>
+
+            <h5>Validation Performance</h5>
+            <p>
+                When evaluating with the validation dataset, the accuracy of our best model dropped to 90% with a higher binary cross entropy loss of 0.307 compared to the training dataset. This gap between training and validation performance in our best model indicates that some overfitting has occurred.
+            </p>
+            <div class="pictures">
+                <img src="../img/model on validation.png" alt="best__validate" class="same_pic">
+            </div>
+            <p>
+                The model is not generalizing as well to the new data, fitting too closely to the specifics of the training images. Additional regularization techniques need to be employed to simplify the model and improve its ability to maintain performance on varied data. At this stage, tuning regularization hyperparameters such as L2 normalization, dropout, and batch normalization were performed to reduce the overfitting and prevent the wide discrepancies between the training and validation accuracy.
+            </p>
+            <p>
+                Here are some of the results from experimenting with different combinations of hyperparameters.
+            </p>
+            <div class="pictures">
+                <img src="../img/tuning.png" alt="tuning" class="same_pic">
+            </div>
+            <p>
+                Through comprehensive experiments, we identified these to be optimal configuration that could potentially yield the best model performance.
+            </p>
+            <div class="table_1">
+                 <table class="data_table">
+                    <tr>
+                        <th>Hyperparameter</th>
+                        <th>Optimal Parameter</th>
+                    </tr>
+                    <tr> <td class="left_table">Dropout Rate</td> <td>0.1<br>0.2</td>  </tr>
+                    <tr> <td class="left_table">L2 Regularization</td> <td>0.01</td> </tr>
+                    <tr> <td class="left_table">Batch Normalization</td> <td>Beta Initializer = Random_Normal & Gamma Initializer = Constant <br>Beta Initializer = Random_Normal & Gamma Initializer = Constant & Epsilon = 0.01</td> </tr>
+                     <tr> <td class="left_table"> Early Stopping</td> <td>min_delta=0.01 & patience =5</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="summary" id="conclusion__content">
+            <h3> Conclusion </h3>
+            <div class="pictures">
+                <img src="../img/best_model.png" alt="best__model" class="same_pic">
+            </div>
+            <p> Through iterative training and evaluation, the best model achieved 94% validation accuracy in detecting malaria from cell images, outperforming human analysis. Key attributes for the best model included:
+            </p>
+            <ul class="optimal">
+                <li>Dropout rate of 0.2</li>
+                <li>L2 regularization rate of 0.005</li>
+                <li>Early stopping with patience of 5 epochs.</li>
+            </ul>
+            <p>
+                Approximately 170 million blood films are examined every year to manually count for malaria. The level of performance from this optimal model could significantly improve malaria testing efficiency by reducing the labor-intensive workload on healthcare professional. Lives could also be saved by enabling earlier and more reliable diagnosis. WHO estimates a 20% reduction in deaths through preventative measures like early detection. For the over 400,000 annual malaria casualties, this model could potentially save 80,000 lives, reduce the cost of malaria diagnostic for medical and research purposes, and introduce standardization of malaria diagnostic to accurately diagnose patients in a timely manner.
+            </p>
+        </div>
+        <div class="written__by">
+            <p>
+                <i>
+                Written By: Tiffany Dinh
+                    <br>
+                    <br>In Conjunction With: Daniel Downs, Phillip Zhu, Shyam Goyal, Stavan Stah
+                </i>
+            </p>
+        </div>
+    </div>
+  </div>
+
+  <div class="footer__container">
+     <div class="social__media">
+        <h2 id="footer__header">Contact Me</h2>
+     </div>
+      <div class="footer__social__icon">
+         <!-- Linkedin-->
+         <a href="https://www.linkedin.com/in/tiffanytuyetdinh/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-linkedin"></i>
+         </a>
+
+         <!--Email--> <!-- use the mailto: function to direct someone to sending an email -->
+         <a href="mailto: dinhttt2@gmail.com" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fa-regular fa-envelope"></i>
+         </a>
+
+         <!--Github-->
+         <a href="/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-github"></i>
+         </a>
+      </div>
+
+     <div class="footer__logo">
+        <a href="../index.html" id="footer__logo">
+              <i>
+                 DinhTechData
+              </i>
+        </a>
+<!--        <a href="https://www.pexels.com/photo/close-up-photo-of-puzzle-pieces-8385825/" id="pic_copyright">-->
+<!--            <i>-->
+<!--                Photo by Tara Winstead on Pexels-->
+<!--            </i>-->
+<!--        </a>-->
+     </div>
+     <p class="website__right">
+        © DinhTechData 2023. All rights reserved
+     </p>
+  </div>
+
+<script src = "../app.js"></script>
+</body>
+</html>

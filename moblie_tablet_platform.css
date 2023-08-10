@@ -1,0 +1,151 @@
+/*This is for website on phones and tablets*/
+@media screen and (max-width: 960 px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 500px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #8cd8ff;
+    }
+
+    .navbar__menu.active {
+        background: #8cd8ff;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 999;
+        height: 50 hv;
+        font-size: 1.6rem;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease-in-out;
+        background: #fff;
+    }
+
+    .navbar__items {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #moblie-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    /*should provide the 3 bar and ability to click */
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    /*targeting 2nd bar*/
+    #moblie-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    /*targeting 1st bar*/
+    #moblie-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /*targeting 3rd bar*/
+    #moblie-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* background color of website */
+
+/* NAVIGATION BUTTON */
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+/* Color of Header #A9DEE2 #5C6898*/
+.navbar__title{
+    background-color: #8ecae6 ;
+    width: 575px;
+    padding-left: 30px;
+    font-family: "Roboto";
+    font-size: 70px;
+    /*white-space: nowrap; !*unwrapped the text*!*/
+}
+
+.navbar__text{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.navbar__text:hover{
+    color: #3d5a80;
+    transition: all 0.3s ease;
+}
+
+/*Color of Menu/Header*/
+.navbar__container{
+    display: flex;
+    justify-content: right;
+}
+/* consist of all the tab names in the .navbar*/
+.navbar__item {
+    background: #8ecae6;
+    width: 160px;
+    padding-left: 10px; /*provides space btwn the background and bullet points*/
+    list-style-type: initial;
+    list-style-position: inside;
+    color: aliceblue;
+    font-family: 'Mulish', sans-serif;
+    font-size: 25px;
+}
+.navbar__links{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/* When hovering over the menu tab, the color will change*/
+.navbar__links:hover{
+    color: #3d5a80;
+    transition: all 0.3s ease;
+}
+
+
+.subtitle {
+    color: black;
+    font-family: "Mulish";
+    font-size: 20px;
+}
+
+
+.description{
+    padding-top: 10px;
+
+}
