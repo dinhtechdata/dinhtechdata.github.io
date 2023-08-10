@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<!--THIS IS THE NAME ON THE BROWSER-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DinhTech Website</title>
+  <link rel="stylesheet" href="all_stylesheet/resume_sheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Sofia&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/fc71e2e61e.js" crossorigin="anonymous"></script>
+</head>
+
+  <!-- Add your site or application content here -->
+<body>
+
+  <!-- CREATING NAVIGATION MENU -->
+  <nav class="navbar">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+     <div class="navbar__container">  <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
+
+        <!--Title w/ navigation button-->
+      <div class="navbar__title">
+       <a href="index.html" class="navbar__text"> <!--a#navbar + 'tab' provides id--> <!-- place image of logo HERE-->
+          Tiffany's Portfolio
+       </a>
+      </div>
+
+        <!--Stuff for the mobile platform-->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+        <!--Menu w/ navigation -->
+      <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
+        <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+            <a href="resume.html" class="navbar__links"> <!-- create one link for each menu item -->
+               Resume
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="projects.html" class="navbar__links"> <!-- place link to python shiny tab -->
+               Projects
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="aboutme.html" class="navbar__links">
+               About Me
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!--NAVIGATION UNDERNEATH MENU-->
+  <nav class="tab__header">
+      <ol class="directory">
+          <li class="directory__tab">
+              <a href="index.html" class="directory__link">
+                  <span>
+                      Home
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current_directory">
+              <b>
+                Resume
+              </b>
+          </li>
+      </ol>
+  </nav>
+
+
+<!--CREATING THE Skill SECTION-->
+  <div id="background"></div>
+  <div class="main">
+     <div class="main__container">
+        <b class="header__section">
+        Skills
+        </b>
+         <hr class="hr"> <!-- creates horizontal line-->
+        <div class="content">
+            <ul class="skill__list">
+                <li>Business Design & Data Governance</li>
+                <li>Data Quality Control & Data Automation</li>
+                <li>Data Analysis & Data Modeling</li>
+                <li>Statistical Analysis & Data Modeling</li>
+                <li>Big Data & Database Management</li>
+                <li>Problem-Solving & Decision-Making</li>
+                <li>Workflow models & Diagrams</li>
+                <li>Cross-functional Collaboration</li>
+                <li>Effective Communication</li>
+                <li>Attention to Detail</li>
+            </ul>
+        </div>
+     </div>
+
+     <div class="container">
+        <b class="header__section">
+           Technical Skills
+        </b>
+         <hr class="hr"> <!-- creates horizontal line-->
+        <div class="content">
+           <b>Programming Languages:</b> Python (scikit-learn, TensorFlow), R/RStudio (dplyr, tidyr), SQL, Mathematica
+           <br><b>Tools:</b> Tableau, Alteryx, Snowflake, Github, Excel/Google Sheets, Anaconda, Jupyter Notebook, Google Colab
+           <br><b>Certifications:</b> Data Science Team Lead(DSTL) Certificate
+        </div>
+     </div>
+
+     <div class="container">
+        <b class="header__section">
+           Professional Experience
+        </b>
+         <hr class="hr"> <!-- creates horizontal line-->
+        <div class="content">
+           <div class="work">
+              <span> <b>Warner Music Group</b> <i>Data Analyst, Quality Control</i> </span>
+
+            <span>
+                Aug. 2022 - Aug. 2023
+            </span>
+           </div>
+            <ul class="experience__list">
+                <li> Developed and implemented a comprehensive quality control policy, ensuring consistent and reliable data throughout the organization</li>
+                <li> Conducted root-cause analysis to determine the source for quality issues and implement preventative measures</li>
+                <li> Automated pipeline for data quality check, resulting in 30% improvement in efficient and accuracy</li>
+                <li> Assisted in the implementation of data governance policies and procedures</li>
+                <li> Optimizing and streamlining data processes for enhanced efficiency</li>
+                <li> Performed exploratory data analysis to determine patterns and trends in the anomalies with large streaming datasets containing billions of rows</li>
+                <li> Executed data quality checks and testing on in-production applications and reporting</li>
+                <li> Collaborated with cross-functional teams and departments to gain a solid understanding of the music industry and its data requirements</li>
+                <li> Created and presented reports and dashboards to communicate findings to management</li>
+            </ul>
+
+           <div class="work">
+              <span> <b>Ingram Micro</b> <i>Student Data Scientist</i> </span>
+            <span>
+                Jan. 2022 - June 2022
+            </span>
+           </div>
+            <ul class="experience__list">
+                <li>Built supervised learning algorithms such as logistic regression, random forest, Adaboost, XGBoost, and lightGBM to predict vendors’ purchase propensity</li>
+                <li>Compute a ranking system and evaluate the robustness of models with learning-to-rank metrics to determine the best model to be put into production</li>
+                <li>Report to the Senior AI Engineer on the feasibility of each model and its’ performance after each month</li>
+            </ul>
+        </div>
+     </div>
+
+     <div class="container">
+        <b class="header__section">
+           Education
+        </b>
+         <hr class="hr"> <!-- creates horizontal line-->
+        <div class="content">
+           <b>University of California, Irvine</b>
+
+            <span class="degree"> Master of Science in Business Analytics <span>2022</span> </span>
+           <span class="degree"> Bachelor of Chemistry with Concentration in Chemical Biology <span>2019</span> </span>
+        </div>
+     </div>
+  </div>
+
+
+  <!--FOOTER SECTION-->
+  <div class="footer__container">
+     <div class="social__media">
+        <h2 id="footer__header">Contact Me</h2>
+     </div>
+      <div class="footer__social__icon">
+         <!-- Linkedin-->
+         <a href="https://www.linkedin.com/in/tiffanytuyetdinh/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-linkedin"></i>
+         </a>
+
+         <!--Email--> <!-- use the mailto: function to direct someone to sending an email -->
+         <a href="mailto: dinhttt2@gmail.com" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fa-regular fa-envelope"></i>
+         </a>
+
+         <!--Github-->
+         <a href="/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-github"></i>
+         </a>
+      </div>
+
+     <div class="footer__logo">
+        <a href="index.html" id="footer__logo">
+              <i>
+                 DinhTech
+              </i>
+        </a>
+        <a href="https://www.pexels.com/photo/robot-holding-a-bowl-8386487/" id="pic_copyright">
+            <i>
+                Photo by Tara Winstead on Pexels
+            </i>
+        </a>
+     </div>
+     <p class="website__right">
+        © DinhTech 2023. All rights reserved
+     </p>
+  </div>
+
+  <script src = "app.js"></script>
+</body>
+
+</html>
