@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<!--THIS IS THE NAME ON THE BROWSER-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DinhTech Website</title>
+  <link rel="stylesheet" href="all_stylesheet/projects_sheet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Sofia&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/fc71e2e61e.js" crossorigin="anonymous"></script>
+</head>
+
+  <!-- Add your site or application content here -->
+<body>
+  <!-- CREATING NAVIGATION MENU -->
+
+  <nav class="navbar">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+     <div class="navbar__container">  <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
+
+        <!--Title w/ navigation button-->
+      <div class="navbar__title">
+       <a href="index.html" class="navbar__text"> <!--a#navbar + 'tab' provides id--> <!-- place image of logo HERE-->
+          Tiffany's Portfolio
+       </a>
+      </div>
+
+        <!--Stuff for the mobile platform-->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+        <!--Menu w/ navigation -->
+      <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
+        <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+            <a href="resume.html" class="navbar__links"> <!-- create one link for each menu item -->
+               Resume
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="projects.html" class="navbar__links"> <!-- place link to python shiny tab -->
+               Projects
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="aboutme.html" class="navbar__links">
+               About Me
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!--NAVIGATION UNDERNEATH MENU-->
+  <nav class="tab__header">
+      <ol class="directory">
+          <li class="directory__tab">
+              <a href="index.html" class="directory__link">
+                  <span>
+                      Home
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current_directory">
+              <b>
+                Projects
+              </b>
+          </li>
+      </ol>
+  </nav>
+
+<!--             ADD CONTENT HERE            -->
+<!--CREATING THE ABOUT ME SECTION-->
+<div id="background"></div>
+<div class="header">Recent Projects</div>
+<div class="service-section">
+
+<!--    Cell image detection   -->
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Imaging-Based Malaria Classification</h1>
+            </div>
+            <div class="back">
+                <a href="project1.html" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="project1.html" class="link">
+                    <p>
+                    With 200 million cases worldwide and approximately
+                    400,000 deaths, this project aims to detect malaria
+                    infected cells through cell images using deep learning algorithms.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!--    Hotel Class Prediction  -->
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Predicting Hotel Class Ratings</h1>
+            </div>
+            <div class="back">
+                <a href="project2.html" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="project2.html" class="link">
+                    <p>
+                        This project aims to use predictive analytics to predict class
+                        rating for LA hotels from TripAdvisor.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- Sentimental Analysis on Hotel Reviews  -->
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Sentimental Analysis: Hotel Reviews</h1>
+            </div>
+            <div class="back">
+                <a href="project3.html" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="project3.html" class="link">
+                    <p>
+                        This project looks into current market trends in the hospitality industry post-pandemic.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!--    Flight Delay Prediction   -->
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Predictive Analysis of Flight Delay in NY</h1>
+            </div>
+            <div class="back">
+                <a href="project4.html" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="project4.html" class="link">
+                    <p>
+                    Ever wonder what affected flight delays? Which airports are more likely to be
+                        affected by flight delays? The objective is to determine contributors to flight delays
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Sentimental Analysis & Topic Modeling: Disneyland Reviews</h1>
+            </div>
+            <div class="back">
+                <a href="https://medium.com/@jacob7141299/disneyland-customer-analysis-an-nlp-approach-to-understanding-international-sentiment-5cb4a7b91260" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="https://medium.com/@jacob7141299/disneyland-customer-analysis-an-nlp-approach-to-understanding-international-sentiment-5cb4a7b91260" class="link">
+                    <p>
+                        The goal of this project is to predict customers purchasing behavior,
+                        enhance guest experience, and provide a productive and efficient marketing
+                        campaign.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <h1>Capstone Project: Ingram Micro</h1>
+            </div>
+            <div class="back">
+                <a href="project6.html" class="link">
+                    <h3>Description</h3>
+                </a>
+                <a href="project6.html" class="link">
+                    <p>
+                    In partnership with Ingram Micro, this project
+                    computed a ranking system for customers purchase propensity and evaluated the robustness of our algorithms.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER SECTION-->
+  <div class="footer__container">
+     <div class="social__media">
+        <h2 id="footer__header">Contact Me</h2>
+     </div>
+      <div class="footer__social__icon">
+         <!-- Linkedin-->
+         <a href="https://www.linkedin.com/in/tiffanytuyetdinh/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-linkedin"></i>
+         </a>
+
+         <!--Email--> <!-- use the mailto: function to direct someone to sending an email -->
+         <a href="mailto: dinhttt2@gmail.com" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fa-regular fa-envelope"></i>
+         </a>
+
+         <!--Github-->
+         <a href="/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-github"></i>
+         </a>
+      </div>
+
+     <div class="footer__logo">
+        <a href="index.html" id="footer__logo">
+              <i>
+                 DinhTech
+              </i>
+        </a>
+        <a href="https://www.pexels.com/photo/light-bulb-on-white-panel-1166643/" id="pic_copyright">
+            <i>
+                Photo by Andreea Ch
+            </i>
+        </a>
+     </div>
+     <p class="website__right">
+        © DinhTech 2023. All rights reserved
+     </p>
+  </div>
+
+
+  <script src = "app.js"></script>
+</body>
+</html>

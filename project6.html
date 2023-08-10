@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<!--THIS IS THE NAME ON THE BROWSER-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DinhTech Website</title>
+  <link rel="stylesheet" href="all_stylesheet/projects.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Sofia&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/fc71e2e61e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- CREATING NAVIGATION MENU -->
+
+  <nav class="navbar">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+     <div class="navbar__container">  <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
+
+        <!--Title w/ navigation button-->
+      <div class="navbar__title">
+       <a href="index.html" class="navbar__text"> <!--a#navbar + 'tab' provides id--> <!-- place image of logo HERE-->
+          Tiffany's Portfolio
+       </a>
+      </div>
+
+        <!--Stuff for the mobile platform-->
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+        <!--Menu w/ navigation -->
+      <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
+        <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+            <a href="resume.html" class="navbar__links"> <!-- create one link for each menu item -->
+               Resume
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="projects.html" class="navbar__links"> <!-- place link to python shiny tab -->
+               Projects
+            </a>
+        </li>
+        <li class="navbar__item">
+            <a href="aboutme.html" class="navbar__links">
+               About Me
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!--NAVIGATION UNDERNEATH MENU-->
+<!--  <nav class="tab__header">-->
+<!--      <ol class="directory">-->
+<!--          <li class="directory__tab">-->
+<!--              <a href="index.html" class="directory__link">-->
+<!--                  <span>-->
+<!--                      Home-->
+<!--                  </span>-->
+<!--              </a>-->
+<!--          </li>-->
+
+<!--          <li class="sep"> / </li>-->
+
+<!--          <li class="current_directory">-->
+<!--              <a href="projects.html" class="directory__link">-->
+<!--                  <span>-->
+<!--                      Projects-->
+<!--                  </span>-->
+<!--              </a>-->
+<!--          </li>-->
+
+<!--          <li class="sep"> / </li>-->
+
+<!--          <li class="current">-->
+<!--              <b>-->
+<!--                Capstone Project-->
+<!--              </b>-->
+<!--          </li>-->
+<!--      </ol>-->
+<!--  </nav>-->
+
+
+<!--  ADD CONTENTS HERE   -->
+<div id="background"></div>
+<div class="main">
+    <nav class="tab__header">
+      <ol class="directory">
+          <li class="directory__tab">
+              <a href="index.html" class="directory__link">
+                  <span>
+                      Home
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current_directory">
+              <a href="projects.html" class="directory__link">
+                  <span>
+                      Projects
+                  </span>
+              </a>
+          </li>
+
+          <li class="sep"> / </li>
+
+          <li class="current">
+              <b>
+                Capstone Project
+              </b>
+          </li>
+      </ol>
+  </nav>
+    <div id="content-1">
+    <h2> Capstone Project: Ingram Micro </h2>
+      <div class="summary" id="background__content">
+            <div class="pictures">
+                <img src="img/Capstone%20Poster.png" alt="capstone">
+            </div>
+        <div class="written__by">
+            <p>
+                <i>
+<!--                Written By: Tiffany Dinh-->
+                    <br>
+                    <br>In Conjunction With: Andrew Xiao, Claire Minorsky, Jiwon Ko, Joe Wei, Mengchen Qu, Pei Hsuan Ko, Prashasti Sharma, Yifan Li, Zexi (Tony) Huang
+                </i>
+            </p>
+        </div>
+      </div>
+  </div>
+</div>
+
+  <div class="footer__container">
+     <div class="social__media">
+        <h2 id="footer__header">Contact Me</h2>
+     </div>
+      <div class="footer__social__icon">
+         <!-- Linkedin-->
+         <a href="https://www.linkedin.com/in/tiffanytuyetdinh/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-linkedin"></i>
+         </a>
+
+         <!--Email--> <!-- use the mailto: function to direct someone to sending an email -->
+         <a href="mailto: dinhttt2@gmail.com" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fa-regular fa-envelope"></i>
+         </a>
+
+         <!--Github-->
+         <a href="/" class="social__icon__link" target="_blank"> <!--target allows you to open in another tab-->
+            <i class="fab fa-github"></i>
+         </a>
+      </div>
+
+     <div class="footer__logo">
+        <a href="index.html" id="footer__logo">
+              <i>
+                 DinhTech
+              </i>
+        </a>
+<!--        <a href="https://www.pexels.com/photo/close-up-photo-of-puzzle-pieces-8385825/" id="pic_copyright">-->
+<!--            <i>-->
+<!--                Photo by Tara Winstead on Pexels-->
+<!--            </i>-->
+<!--        </a>-->
+     </div>
+     <p class="website__right">
+        © DinhTech 2023. All rights reserved
+     </p>
+  </div>
+
+  <script src = "app.js"></script>
+</body>
+</html>
