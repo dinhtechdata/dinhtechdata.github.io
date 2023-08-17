@@ -150,7 +150,7 @@ html{
     /*CONTENT HERE*/
 
 #background{
-    background-image: url('/img/homepage__tarawindstead.jpg');
+    background-image: url('img/homepage__tarawindstead.jpg');
     background-size: cover;
     width: 100%;
     height: auto;
@@ -235,7 +235,7 @@ html{
 .footer__container{
     /*background: #3d5a80;*/
     color: aliceblue; /*changes the copyright word*/
-    margin-top: 8%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     margin-left: 5px;
