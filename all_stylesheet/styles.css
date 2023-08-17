@@ -6,6 +6,7 @@
 }
 
 html{
+    max-width: max-content;
     scroll-behavior: smooth;
 }
 
@@ -55,10 +56,6 @@ html{
 
 /*MAKING WEBSITE COMPATIBLE WITH PHONES AND TABLETS*/
 @media screen and (max-width: 960px) {
-    #background{
-        height: auto;
-        width: 100%;
-    }
     .navbar{
         height: 100%;
     }
@@ -72,9 +69,8 @@ html{
         top: -100px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 10vh; /*height of dropdown menu*/
+        /*height: 10vh; !*height of dropdown menu*!*/
         z-index: -1;
-        /*background: #98c1d9;*/
     }
 
     /*the whole dropdown menu*/
@@ -84,9 +80,10 @@ html{
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 999;
-        height: 50vh;
+        height: 80vh;
         font-size: 3rem;
         border: 1px solid black;
+        transform: translate(-50%);
     }
     .navbar__text{
         font-size: 5vh;
@@ -145,20 +142,34 @@ html{
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+    }
+
+    .main h1{
+        font-size: 5%;
+    }
+
+    html, body{
+        max-width: max-content;
+        overflow-x: hidden;
+    }
+
 }
 
     /*CONTENT HERE*/
 
-#background{
-    background-image: url('img/homepage__tarawindstead.jpg');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #a5c4d6;
+    background-image: url("../img/homepage__tarawindstead.jpg");
     background-size: cover;
-    width: 100%;
-    height: auto;
-    position: fixed;
+    background-position: center 55%;
     background-repeat: no-repeat;
-    z-index: -10;
-    background-position: center center;
-    top: 0;
 }
 
 .main{
@@ -235,7 +246,7 @@ html{
 .footer__container{
     /*background: #3d5a80;*/
     color: aliceblue; /*changes the copyright word*/
-    margin-top: 2%;
+    margin-top: 7%;
     display: flex;
     flex-direction: column;
     margin-left: 5px;

@@ -12,7 +12,7 @@ menu.addEventListener('click', function (){
 
 window.addEventListener("DOMContentLoaded", scrollLoop, false)
 
-const background = document.querySelector("#background");
+const background = document.querySelector("body");
 // horizontal scrolling
 let xScrollPosition;
 
