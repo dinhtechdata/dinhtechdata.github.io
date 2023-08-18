@@ -10,6 +10,12 @@ html{
     scroll-behavior: smooth;
 }
 
+:root{
+    --fs-xl: 15rem;
+    --fs-m: 2.25rem;
+    --fs-s: 1rem;
+}
+
 /* NAVIGATION BUTTON */
 
 .navbar{
@@ -17,7 +23,6 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    /*border-bottom: 1px solid #3d5a80;*/
 }
 
 /*changing menu*/
@@ -29,7 +34,6 @@ html{
     font-family: 'Mulish', sans-serif;
     font-size: 30px;
     font-weight: bold;
-    gap: 2rem;
     padding: 0;
     margin: 0;
     background-color: transparent;
@@ -69,7 +73,6 @@ html{
         top: -100px;
         opacity: 0;
         transition: all 0.5s ease;
-        /*height: 10vh; !*height of dropdown menu*!*/
         z-index: -1;
     }
 
@@ -80,7 +83,7 @@ html{
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 999;
-        height: 80vh;
+        height: 75%;
         font-size: 3rem;
         border: 1px solid black;
         transform: translate(-50%);
@@ -99,7 +102,6 @@ html{
         transition: all 0.5s ease-in-out;
         background: #3d5a80;
     }
-
 
     .navbar__links {
         text-align: center;
@@ -142,22 +144,6 @@ html{
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
-    .main{
-        display: flex;
-        flex-direction: column;
-        padding-top: 5%;
-    }
-
-    .main h1{
-        font-size: 5%;
-    }
-
-    html, body{
-        max-width: max-content;
-        overflow-x: hidden;
-    }
-
 }
 
     /*CONTENT HERE*/
@@ -182,7 +168,8 @@ body{
 .main h1{
     text-align: left;
     font-family: "Roboto", sans-serif;
-    font-size: 10rem;
+    font-size: var(--fs-xl);
+    -webkit-text-size-adjust: 100%;
     padding-top: 2rem;
     padding-left: 3rem;
     color: #3d5a80;
@@ -246,7 +233,7 @@ body{
 .footer__container{
     /*background: #3d5a80;*/
     color: aliceblue; /*changes the copyright word*/
-    margin-top: 7%;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     margin-left: 5px;
@@ -298,4 +285,42 @@ body{
     font-size: 12px;
     cursor: pointer;
     text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15%;
+    }
+
+    .main h1{
+        font-size: var(--fs-m);
+    }
+
+    .content{
+        font-size: var(--fs-s);
+        line-height: 2.5rem;
+        text-align: center;
+    }
+
+    .content p:hover{
+    color: aliceblue;
+    }
+
+    html, body {
+        max-width: max-content;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    .footer__container{
+        padding-top: 15%;
+    }
+
+    :root {
+        font-size: var(--fs-m);
+    }
 }
