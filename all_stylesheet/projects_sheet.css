@@ -281,6 +281,11 @@
     color: #3d5a80;
     text-align: center;
     font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+}
+
+.front a{
+    text-decoration: none;
 }
 
 .back{
@@ -306,6 +311,7 @@
     /*padding-top: 20px;*/
     display: flex;
     flex-direction: column;
+    padding-left: 1%;
     /*position: fixed;*/
     /*padding: 10px 0;*/
     /*justify-content: center;*/
@@ -358,4 +364,14 @@
     font-size: 12px;
     cursor: pointer;
     text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+ .container{
+     padding-left: 12%;
+ }
+
+    #background{
+        height: 200%;
+    }
 }

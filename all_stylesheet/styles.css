@@ -1,55 +1,91 @@
 /*ENTIRE WEBPAGE*/
 *{
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     margin: 0;
     padding: 0;
 }
 
-html{
-    max-width: max-content;
-    scroll-behavior: smooth;
+:root{
+    --fs-xl: 10rem;
+    --fs-m: 2.5rem;
+    --fs-s: 1rem;
 }
 
-:root{
-    --fs-xl: 15rem;
-    --fs-m: 2.25rem;
-    --fs-s: 1rem;
+html{
+    scroll-behavior: smooth;
 }
 
 /* NAVIGATION BUTTON */
 
 .navbar{
-    height: 150px;
+    background-color:transparent;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: var(--fs-m);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
+/*Color of Menu/Header & Space of the Menu*/
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*changing tiffany's portfolio*/
+.navbar__text{
+    cursor: pointer;
+    color: #3d5a80;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    font-size: 75px;
+    white-space: nowrap;
+}
+
+/*changing the color when hovered over link*/
+.navbar__text:hover{
+    color: rgba(107,153,156, 0.8);
+    transition: all 0.3s ease;
 }
 
 /*changing menu*/
 .navbar__menu{
+    position: relative;
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     list-style: none;
     text-align: center;
     font-family: 'Mulish', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
+    gap: 2rem;
+    /*!*padding: 0;*!*/
+    /*!*margin: 0;*!*/
 }
 
+.navbar__item{
+    height: 50px;
+}
 
 .navbar__links{
     display: flex;
     justify-content: center;
     align-items: center;
     color: aliceblue;
-    text-decoration: none;
     background-color: rgba(107,153,156, 0.8);
+    text-decoration: none;
     padding: 0 1rem;
     height: 100%;
-    width: 100%;
 }
 
 /* When hovering over the menu tab, the color will change*/
@@ -60,8 +96,14 @@ html{
 
 /*MAKING WEBSITE COMPATIBLE WITH PHONES AND TABLETS*/
 @media screen and (max-width: 960px) {
-    .navbar{
-        height: 100%;
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%; /*width of the whole navigation menu */
+        max-width: 1300px;
+        padding: 0;
     }
 
     .navbar__menu {
@@ -70,27 +112,30 @@ html{
         margin: 0;
         width: 100%; /*width of the dropdown menu*/
         position: absolute;
-        top: -100px;
+        top: -1000px;
         opacity: 0;
         transition: all 0.5s ease;
+        height: 50vh; /*height of dropdown menu*/
         z-index: -1;
+        /*background: #98c1d9;*/
     }
 
     /*the whole dropdown menu*/
     .navbar__menu.active {
         background: #FFFFF7; /*background of the dropdown*/
-        top: 10%; /*makes sure it doesn't overlap with previous border*/
+        top: 100%; /*makes sure it doesn't overlap with previous border*/
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 999;
-        height: 75%;
+        height: 100vh;
         font-size: 3rem;
         border: 1px solid black;
-        transform: translate(-50%);
+        transform: translate(-50%, 10%);
+
     }
     .navbar__text{
         font-size: 5vh;
-        padding-left: 20px ;
+        padding-left: 10px;
     }
 
     /*designing the hamburger menu*/
@@ -119,9 +164,9 @@ html{
     /*moves where the menu bar goes*/
     #mobile-menu {
         position: absolute;
-        top: 5%;
+        top: 30%;
         right: 5%;
-        /*transform: translate(5%, 5%);*/
+        transform: translate(2%, 30%);
     }
 
     /*Allow you to have a pointer in the hamburger menu*/
@@ -144,18 +189,18 @@ html{
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
 }
 
     /*CONTENT HERE*/
-
 body{
     margin: 0;
     padding: 0;
-    background-color: #a5c4d6;
     background-image: url("../img/homepage__tarawindstead.jpg");
+    background-color: #a5c4d6;
     background-size: cover;
-    background-position: center 55%;
-    background-repeat: no-repeat;
+    background-position: center 53%;
+
 }
 
 .main{
@@ -163,6 +208,7 @@ body{
     justify-content: flex-start;
     gap: 1%;
     align-items: center;
+    padding-top: 5%;
 }
 
 .main h1{
@@ -233,7 +279,7 @@ body{
 .footer__container{
     /*background: #3d5a80;*/
     color: aliceblue; /*changes the copyright word*/
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     margin-left: 5px;
@@ -309,15 +355,10 @@ body{
     }
 
     html, body {
-        max-width: max-content;
         overflow-x: hidden;
         -webkit-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
-    }
-
-    .footer__container{
-        padding-top: 15%;
     }
 
     :root {
