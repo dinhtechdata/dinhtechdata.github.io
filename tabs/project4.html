@@ -92,9 +92,10 @@
         <nav id="navigation">
             <ul id="navList">
                 <li> <a href="#background__content" class="heading"> Background </a></li>
+                <li><a href="#hypothesis" class="heading"> Hypothesis</a></li>
                 <li> <a href="#dataset" class="heading"> Dataset </a></li>
                 <li><a href="#eda" class="heading"> EDA</a></li>
-                <li><a href="#ml__technique" class="heading"> ML Techniques</a></li>
+                <li><a href="#model_perf" class="heading">Model Performance</a></li>
                 <li> <a href="#conclusion__content" class="heading"> Conclusion </a></li>
             </ul>
         </nav>
@@ -109,96 +110,256 @@
                 <p class="caption"> Image Credit: <a href="https://www.freepik.com/free-vector/young-woman-sitting-airport-using-tablet_9652214.htm#query=flight%20delay&position=26&from_view=keyword&track=ais">pch.vector</a></p>
             </div>
             <p>
-              Trip planning begins with finding the right accommodations. Before booking a stay, travelers typically investigate, assess, and analyze lodging options in a desired destination. This led to the rise in travel tools like TripAdvisor making it easier for vacationers to compare different potential bookings. Most travelers utilized reviews on TripAdvisor, star ratings, and hotel class ratings to compare between potential bookings.
+                Allow me to share a story involving an acquaintance of mine, let’s call him "Joe," who found himself in a situation while in New York. As he hurriedly made his way back to California for a significant wedding event, unforeseen circumstances came into play. His flight experienced an unexpected delay of over an hour, primarily attributed to adverse weather conditions – a blanket of snow covered the region. This delay unfortunately resulted in his tardiness to his own wedding ceremony, an occurrence that understandably left the bride discontented.
             </p>
             <p>
-                While star ratings left by reviewers offer valuable insight, less is known about how TripAdvisor calculates a hotel's class rating itself. TripAdvisor states these 1-5 star hotel classes reflect "general amenities and services" based on third-party data. However, studies show discrepancies between advertised and actual hotel quality.
+                However, it's important to recognize that flight delays extend beyond an individual's personal experiences. Situations like Joe's are all too common - flight delays derail travel plans every single day. But what if we could help minimize its impact? This is precisely the reason this chosen subject has been targeted for focus as it holds such significance.
             </p>
             <p>
-                This project applies machine learning to predict hotel classes using TripAdvisor data. By reverse-engineering what drives these ratings, we can identify key attributes that improve a hotel's class. The models provide data-driven guidance to new developers on offering the right amenities to achieve their desired ranking. Further, the ratings allow existing hotels to benchmark their performance against predicted classes from unbiased review analysis.
-                Ultimately, illuminating the factors behind TripAdvisor hotel classes allows travelers to make informed booking decisions, new hotels to set appropriate goals, and the industry to benefit from transparency in reputation metrics.
+                By analyzing weather patterns, historic flight data, and other factors, we aim to give travelers advanced notice of possible disruptions. This will let them make arrangements to avoid missing important events. Our endeavors center around the development of a predictive model designed to anticipate flight delays in the two major airports in New York City, John F. Kennedy International Airport (JFK) and LaGuardia Airport (LGA). We aim to proactively address the challenges posed by flight delays and contribute to a more seamless travel experience for all passengers.
             </p>
+        </div>
 
+        <div class="summary" id="hypothesis">
+            <h3> Hypothesis </h3>
+            <p>
+                Before we began, we had two hypotheses about flight delays.
+            </p>
+                <br>
+                <div id="hypothesis_content">
+                <br><b> Weather </b>
+                <br> <b>Ho:</b> <span>Weather would be a big contributor to flight delay</span>
+                <br> <b>Ha:</b> <span> Weather would not be a big contributor to flight delay</span>
+                <br>
+                <br><b> Airport </b>
+                <br> <b>Ho:</b> <span> JFK has the higher delay rate compared to LGA</span>
+                <br> <b>Ha:</b> <span> FK has the higher delay rate compared to LGA</span>
+                </div>
         </div>
 
         <div class="summary" id="dataset">
             <h3> Dataset </h3>
             <p>
-                To collect pertinent hotel data, web scraping techniques were implemented to gather information from TripAdvisor.com utilizing Selenium package. The scope of hotels gathered through web scraping was limited to only those located in the greater Los Angeles metropolitan area. This provided a geographic focus for the hotel class prediction models, letting us hone in on defining class rating factors within a specific regional market. Key attributes collected for each hotel included name, location, property amenities, room features, hotel class rating, and traveler ‘s rating, etc.
+                Our data was sourced from Kaggle and originated from the U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics (BTS) which tracks the on-time performance of domestic flights operated by large air carriers. This dataset consisted of all flights delayed by departing from both JFK and LGA in 2019. Our target variable was defined as flights delayed for more than 15 minutes.
             </p>
+            <br><b>Data Cleaning</b>
             <p>
-                With over 200 potential hotel attributes available, 15 attributes were collaboratively selected that is expected to be predictor variable for hotel class rating. To determine which amenities of the 15 features were most informative, association rule was employed to obtain information gain. This looked for "rules" linking certain amenities to others, ranked by metrics like confidence, lift and conviction. The algorithm identified beach access, ocean view, and coffee shop presence as having the strongest associations.
+                The original data set had over 6+ million data points. To reduce the noise, we cleaned up our data by selecting flights from JetBlue at LaGuardia and JFK airports in NY. With our cleaned data, we split our dataset (46,999 observations) into 76/24 with 76 in training and 24 in testing.
+                We used 5 categorical variables and 7 numerical variables to help us predict our target variable.
             </p>
+            <br>
+
+                <p class="under">  Categorical Variable </p>
+            <ol class="var">
+                <li> Month (12 categories: 1-12)</li>
+                <li> Day of Week (7 categories: 1-7)</li>
+                <li> Departure Time Block (4 blocks)</li>
+                <li> Distance Group (11 categories: 1-11)</li>
+                <li> Segment Number (10 categories: 1-10)</li>
+            </ol>
+            <br>
+            <p class="under">Numeric Variable</p>
+            <ol class="var">
+                <li> Concurrent Flights</li>
+                <li> Number of Seats</li>
+                <li> Plane Age</li>
+                <li> Precipitations</li>
+                <li> Snow</li>
+                <li> Max Temperature</li>
+                <li> Wind Speed</li>
+            </ol>
+            <br>
         </div>
 
         <div class="summary" id="eda">
             <h3>EDA (Exploratory Data Analysis)</h3>
-            <p>
-                From the data collected through web scrapping, a thorough exploratory analysis was conducted to understand the features, uncover insights, and prepare the data for modeling. This exploration uncovered established a solid foundation before training machine learning algorithms to predict hotel class.
-Key findings include:
+            <div class="pictures">
+                <p>Visualizing our data, August has the most delays throughout the year.</p>
+                <img src="../img/aug_predictive.jpeg" alt="aug_pred">
+            </div>
 
-            </p>
-            <ol class="key__attributes">
-                <li>As shown in the pie chart, the dataset composed a majority of 3 rating hotel class and less than a quarter of 2 or 4 rating hotel class.
-                <br> <img src="../img/piechart.png" alt="piechart">
-                </li>
-                <li>This horizontal bar chart depicts the tally of select amenities present at hotels in the collected data, with 1 having the amenity and 0 does not have the amenity.
-                    <br> <img src="../img/barchart__amenities.png" alt="barchart">
-                </li>
-                <li>Among the most common hotel facilities in LA included wifi, pool, and fitness gym as visualized in the bubble graph.
-                    <br> <img src="../img/bubblemap.png" alt="bubblemap">
-                </li>
-            </ol>
+            <div class="pictures">
+                <p>We also found that Evening has the most delays throughout the day. </p>
+                <img src="../img/time__predictive.png" alt="aug_pred">
+            </div>
+
         </div>
 
-        <div class="summary" id="ml__technique">
-            <h3>Machine Learning Techniques</h3>
+        <div class="summary" id="model_perf">
+            <h3>Model Performance</h3>
             <p>
-                3 common machine learning models were applied to our dataset: random forest, decision tree, and K-nearest neighbor.
+                5 different machine learning algorithms were used: logistic regression, naïve bayes, decision tree, KNN, and random forest. Two metrics were used to evaluate the performance of our model, accuracy, and error rate. We noticed that due to a lot of noise in our data, our accuracy suffered.
             </p>
-            <div class="pictures">
-                <img src="../img/modeling.png" alt="modeling">
-            </div>
-            <p>
-                Our dataset was partitioned with an 80/20 training-test split. We tried our model with 1) the original dataset (imbalance class), 2) oversample balanced dataset, and 3) reduced feature subset. SMOTE oversampling technique was applied to balance our imbalanced class dataset to improve model performance. This balanced the class distributions, aiming to improve model training and performance compared to the skewed original data.
-                Here are the best parameters applied to each model used with our dataset.
-            </p>
-           <div class="table_1">
-                 <table class="data_table">
-                    <tr>
-                        <th>Models</th>
-                        <th>Optimal Parameter</th>
-                    </tr>
-                    <tr> <td class="left_table">Random Forest</td> <td>min_sample_leaf = 5 & n_estimator = 400</td>  </tr>
-                    <tr> <td class="left_table">Decision Tree</td> <td>max_depth = 10 & random_state = 0 </td> </tr>
-                    <tr> <td class="left_table">KNN</td> <td>n_neighbors = 30</td> </tr>
-                </table>
-           </div>
 
+            <div class="model_sum">
+            <table class="data__table">
+                <tr>
+                <th>Method</th>
+                <th>Stratified</th>
+                <th>Accuracy (%)</th>
+                <th>Error (%)</th>
+                </tr>
+
+                <tr>
+                    <td class="method">Logistic Regression</td>
+                    <td>Not Delay</td>
+                    <td>62.36</td>
+                    <td>36.20</td>
+                </tr>
+
+                <tr class="delay">
+                    <td></td>
+                    <td>Delay</td>
+                    <td>65.23</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="method">Naive Bayes</td>
+                    <td>Not Delay</td>
+                    <td>58.75</td>
+                    <td>38.12</td>
+                </tr>
+
+                 <tr class="delay">
+                    <td></td>
+                    <td>Delay</td>
+                    <td>65.00</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="method">Decision Tree</td>
+                    <td>Not Delay</td>
+                    <td>41.09</td>
+                    <td>40.58</td>
+                </tr>
+
+                 <tr class="delay">
+                    <td></td>
+                    <td>Delay</td>
+                    <td>77.74</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="method">KNN</td>
+                    <td>Not Delay</td>
+                    <td>64.57</td>
+                    <td>35.02</td>
+                </tr>
+
+                 <tr class="delay">
+                    <td></td>
+                    <td>Delay</td>
+                    <td>65.40</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="method">Random Forest</td>
+                    <td>Not Delay</td>
+                    <td>67.32</td>
+                    <td>34.19</td>
+                </tr>
+
+                 <tr class="delay">
+                    <td></td>
+                    <td>Delay</td>
+                    <td>64.29</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+            <br><b>Analysis from Modeling</b>
             <p>
-                Accuracy was selected as the key evaluation metric to benchmark performance of the different machine learning models for hotel class prediction. Here are the results:
+                From our logistic regression model, there is negative correlation between flight delay the other time block. Furthermore, we made a dummy variable for JFK. If the flight was from JFK, we labeled it 1 and if not, the label was 0. From there were able to run the model again and found that LaGuardia Airport had more delays than JFK.
             </p>
-            <div class="pictures">
-                <img src="../img/modeling__result.png" alt="modeling__result">
+
+            <div class="image-row">
+                <img src="../img/month__baseline.png" alt="month_baseline">
+                <img src="../img/dat__baseline.png" alt="day_baseline">
+                <img src="../img/time__baseline.png" alt="time_baseline">
+                <img src="../img/weather__baseline.png" alt="weather_baseline">
             </div>
+
+            <div class="pictures">
+            <p>Importance variable plot is an evaluation metric to determine what factors play an important role in the success of the classification of our model. The more the accuracy suffer, the more important the variable is for a successful classification. </p>
+            <img src="../img/import__var.jpeg" alt="import_var">
+                <p> Based on the importance variable plot, here are the top five contributors to flight delays.</p>
+                <ol class="import">
+                    <li>Rain</li>
+                    <li>August</li>
+                    <li>Wind Speed</li>
+                    <li>October</li>
+                    <li>November</li>
+                </ol>
+                <p>We initially expected that the departure time block between 12 am - 6 am had many flight delays. We didn’t exactly understand why that was the case as it didn’t make sense with the rest of the data. Looking further into the situation, we realized we had the wrong conclusion. In fact, flights between 12 am - 6 pm had a negative correlation with flight delays and at this time block there would be less flight delays.</p>
+            </div>
+
+            <div class="prediction">
+                <p>
+                    We wanted to test our model performance with current data, so we used data from flightradar24 and weather underground and this is what we got.
+                </p>
+                <table class="data_table">
+                    <tr>
+                        <th>Tuesday March 8, 2022</th>
+                        <th>Wednesday March 9, 2022</th>
+                    </tr>
+
+                    <tr>
+                        <td> <img src="../img/sun_pred.png" alt="sun"></td>
+                        <td> <img src="../img/cloud_pred.png" alt="cloud"> <img src="../img/cloudy_pred.png" alt="cloudy"></td>
+                    </tr>
+
+                    <tr>
+                        <td> Temp: 46 / 39 °F</td>
+                        <td> Temp: 41 / 34 °F</td>
+                    </tr>
+
+                    <tr>
+                        <td> Accuracy: 48.03% </td>
+                        <td> Accuracy: 87.86%</td>
+                    </tr>
+                </table>
+
+                <div class="pictures">
+                <p>Here’s the actual results from that day Wednesday, March 9, 2022.</p>
+                <img src="../img/pred.png" alt="pred_val">
+            </div>
+        </div>
         </div>
 
         <div class="summary" id="conclusion__content">
             <h3> Conclusion </h3>
             <p>
-                Based on the three models ran, the most accurate model was K-nearest neighbor. While random forest and decision tree models attained higher training accuracy after applying SMOTE oversampling, their performance suffered greatly on the testing set. The significant gap indicates these complex models overfit the training data.
-                In contrast, the KNN model demonstrated only a negligible 2% difference between its 62% training accuracy and 60% testing accuracy with the original dataset. This conveys better generalization with less proneness to overfitting compared to the other approaches.
+                Here is what we concluded about our hypothesis from our analysis.
+            </p>
+            <br>
+            <div id="hypot_con">
+                <br><b> Weather </b>
+                <br> <span class="cor"> <b>Ho:</b> <span>Weather would be a big contributor to flight delay</span> </span>
+                <br> <b>Ha:</b> <span> Weather would not be a big contributor to flight delay</span>
+                <br>
+                <br><b> Airport </b>
+                <br> <b>Ho:</b> <span> JFK has the higher delay rate compared to LGA</span>
+                <br> <span class="cor"> <b>Ha:</b> <span> JFK has the higher delay rate compared to LGA</span> </span>
+            </div>
+
+            <p>
+                Flight prediction is important because it would help airlines be more proactive rather than reactive. We believe that doing flight delay prediction would help airlines be more prepared in the case of a delay and to increase customer satisfaction. We hope that our findings will help JetBlue know which month, day, and time to expect the most delays.
             </p>
             <p>
-                By determining the key drivers behind ratings, current property owners can simulate introducing new features to quantify possible rating improvements. By evaluating the ROI of upgrades, owners can strategically add amenities projected to boost their rating at an acceptable cost. This enables hotels to enhance their reputation and visibility on platforms like TripAdvisor. Additionally, New hotel developers can leverage the tool early in planning by inputting intended amenities and facilities. The model would estimate the likely hotel class rating, allowing adjustments to investment and design to achieve the desired prestige rating in a data-driven manner.
+                We expected that weather such as snow and rain to have the biggest impacts on flight delays; however, based on our finding, the biggest impact to flight delays were when departures occurred in the mornings between 6am - 12pm. Another impact that played a significant role was flight delays in August due to summer.
             </p>
+
         </div>
         <div class="written__by">
             <p>
                 <i>
                 Written By: Tiffany Dinh
                     <br>
-                    <br>In Conjunction With: Runan Yang, Sakshi Menta, Jiahe Zhang, Jasmit Tamber
+                    <br>In Conjunction With: Jiwon Ko, Pei Hsuan Ko, Taeho Lee, Lihong Zhao
                 </i>
             </p>
         </div>
