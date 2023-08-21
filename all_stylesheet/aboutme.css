@@ -5,10 +5,18 @@
     padding: 0;
 }
 
+:root{
+    --fs-xl: 5rem;
+    --fs-m: 3rem;
+    --fs-s: 1.2rem;
+}
+
 /* NAVIGATION BUTTON */
 
 .navbar{
-    background: #3d5a80;
+    background:transparent;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     height: 100px;
     display: flex;
     /*justify-content: center;*/
@@ -17,7 +25,9 @@
     position: sticky;
     top: 0;
     z-index: 999;
+
 }
+
 
 /*Color of Menu/Header & Space of the Menu*/
 .navbar__container{
@@ -31,10 +41,11 @@
     padding: 0;
 }
 
+
 /*changing tiffany's portfolio*/
 .navbar__text{
     cursor: pointer;
-    color: aliceblue;
+    color: #3d5a80;
     font-family: "Roboto", sans-serif;
     text-decoration: none;
     font-size: 75px;
@@ -43,7 +54,7 @@
 
 /*changing the color when hovered over link*/
 .navbar__text:hover{
-    color: #98c1d9;
+    color: rgba(107,153,156, 0.8);
     transition: all 0.3s ease;
 }
 
@@ -55,6 +66,7 @@
     text-align: center;
     font-family: 'Mulish', sans-serif;
     font-size: 20px;
+    gap: 2rem;
     padding: 0;
     margin: 0;
 }
@@ -68,6 +80,7 @@
     justify-content: center;
     align-items: center;
     color: aliceblue;
+    background-color: rgba(107,153,156, 0.8);
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
@@ -75,7 +88,7 @@
 
 /* When hovering over the menu tab, the color will change*/
 .navbar__links:hover{
-    color: #98c1d9;
+    color: #3d5a80;
     transition: all 0.3s ease;
 }
 
@@ -107,7 +120,7 @@
 
     /*the whole dropdown menu*/
     .navbar__menu.active {
-        background: #ffffff; /*background of the dropdown*/
+        background: #FFFFF7; /*background of the dropdown*/
         top: 100%; /*makes sure it doesn't overlap with previous border*/
         opacity: 1;
         transition: all 0.5s ease;
@@ -117,6 +130,7 @@
         border: 1px solid black;
     }
     .navbar__text{
+        font-size: 5vh;
         padding-left: 20px ;
     }
 
@@ -125,19 +139,22 @@
         width: 30px;
         height: 3px;
         margin: 5px auto;
-        padding: 50px;
+        padding: 0;
         transition: all 0.5s ease-in-out;
-        background: #fff;
+        background: #3d5a80;
     }
-
-    /*.navbar__item {*/
-    /*    width:100%;*/
-    /*}*/
 
     .navbar__links {
         text-align: center;
         width: 100%;
         display: table;
+        background-color: transparent;
+        color: #3d5a80;
+    }
+
+    .navbar__links:hover{
+        color: rgba(107,153,156, 0.8);
+        transition: all 0.3s ease;
     }
 
     /*moves where the menu bar goes*/
@@ -168,6 +185,7 @@
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
 }
 
 /*NAVIGATION UNDERNEATH MENU*/
@@ -196,34 +214,148 @@
 
 }
 
+
+/*NAVIGATION UNDERNEATH MENU*/
+.tab__header{
+    font-family: 'Mulish', sans-serif;
+}
+
+.directory{
+    display: flex;
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/*changing Home*/
+.directory__link{
+    color: black;
+    text-decoration: none;
+    padding-right: 2px;
+
+}
+
+/*changing Current tab*/
+.current_tab{
+    font-size: medium;
+
+}
+
     /*CONTENT HERE*/
-    .main1__container {
-        color: black;
-        font-family: 'Mulish', sans-serif;
-        font-size: xx-large;
-    }
+.main{
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
 
-    .content {
-        padding-top: 10px;
-        font-size: medium;
+.container__1{
+    background-color: rgba(107,153,156, 0.8);
+    margin: 0 5%;
+    color: aliceblue;
+    border-radius: 5px;
+}
 
-    }
+.container__1 h2{
+    padding: 0 2%;
+    text-align: right;
+    font-size: var(--fs-m);
+}
+
+.content{
+    padding: 0 3%;
+    display: flex;
+    gap: 3%;
+}
+
+img{
+    /*align-items: t;*/
+    float: left;
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    shape-outside: circle();
+    clip-path: circle();
+    /*object-fit: cover;*/
+}
+
+.content p{
+    font-size: var(--fs-s);
+    padding-top: 10%;
+    align-items: center;
+}
+
+.aoi{
+    margin-top: 2%;
+    /*background: rgba(107,153,156, 0.8);*/
+    color: aliceblue;
+    padding: 5% 0 0 0;
+}
+
+.aoi__container{
+   background: rgba(107,153,156, 0.8)
+}
+
+.aoi svg{
+    display: block;
+}
+.aoi h2{
+    background-color: rgba(107,153,156, 0.8);
+    font-size: var(--fs-m);
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 3%;
+}
+
+.aoi__container ul{
+    display: flex;
+    justify-content: center;
+    padding: 0 1%;
+    gap: 3%;
+}
+
+.aoi li{
+    border: 2px solid aliceblue;
+    border-radius: 20px;
+    padding: 2% 4%;
+    list-style: none;
+    font-size: var(--fs-s);
+    text-align: center;
+}
+
+.lol{
+    padding: 3% 0;
+    flex-direction: column;
+}
+
+.lol li{
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 0 2%;
+    list-style: circle;
+}
+
+.interest p{
+    font-size: 2rem;
+    font-weight: bold;
+    /*background-color: ;*/
+}
 
 /*FOOTER SECTION*/
 
 .footer__container{
-    background: #3d5a80;
-    color: aliceblue;
+    /*background: #3d5a80;*/
+    color: black;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
+    padding-left: 1%;
     /*justify-content: center;*/
     /*align-items: center;*/
 }
 
 /*changes contact me*/
 #footer__header{
-    color: aliceblue;
+    color: #3d5a80;
     text-decoration: none;
     text-align: center;
     justify-content: center;
@@ -238,18 +370,43 @@
 }
 
 .social__icon__link{
-    color: aliceblue;
+    color: #3d5a80;
     justify-content: center;
     align-items: center;
     width: 40px;
 }
 
+.social__icon__link:hover{
+    color: rgba(107,153,156, 0.8);
+    transition: all 0.3s ease;
+}
+
 /*changes the italicized dinhtech*/
 #footer__logo{
-    color: aliceblue;
-    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-family: "Roboto", sans-serif;
     display: flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+}
+
+/*picture copyright*/
+#pic_copyright{
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 960px){
+    .main{
+        padding: 0;
+    }
+
+    #background{
+        width: 110%;
+    }
+
 }
