@@ -656,7 +656,7 @@ footer{
 }
 
 /*picture copyright*/
-#pic_copyright{
+.pic_copyright{
     color: black;
     font-family: "Roboto", sans-serif;
     font-size: 12px;
