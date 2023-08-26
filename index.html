@@ -1,7 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<!--THIS IS THE NAME ON THE BROWSER-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,59 +10,407 @@
 <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,300&family=Pacifico&family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Sofia&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/fc71e2e61e.js" crossorigin="anonymous"></script>
 </head>
-
-  <!-- Add your site or application content here -->
 <body>
-  <!-- CREATING NAVIGATION MENU -->
-  <nav class="navbar">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+  <section id="homepage">
+      <div class="homepage__container">
+        <div class="header">
+            <div class="square">
+                <div class="name">
+                    <h1> Tiffany Dinh </h1>
+                    <div class="line"></div>
+                    <p>Data Analyst</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right__side">
+      <!-- CREATING NAVIGATION MENU -->
+            <nav class="navbar" id="first_nav">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
       <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
-        <!--Title w/ navigation button-->
-      <div class="navbar__title">
+      <!--Title w/ navigation button-->
 
         <!--Stuff for the mobile platform-->
-      <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
 
         <!--Menu w/ navigation -->
-      <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
-        <li class="navbar__item"> <!-- create a list item element for the menu bar -->
-            <a href="resume.html" class="navbar__links"> <!-- create one link for each menu item -->
-               Resume
-            </a>
-        </li>
-        <li class="navbar__item">
-            <a href="projects.html" class="navbar__links"> <!-- place link to python shiny tab -->
-               Projects
-            </a>
-        </li>
-        <li class="navbar__item">
-            <a href="aboutme.html" class="navbar__links">
-               About Me
-            </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+                <ul class="navbar__menu"> <!-- create an unordered list for the menu bar -->
+                <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+                    <a href="#resume" class="navbar__links"> <!-- create one link for each menu item -->
+                    Resume
+                    </a>
+                </li>
 
-<!--             ADD CONTENT HERE            -->
-<!--CREATING THE ABOUT ME SECTION-->
-  <div class="main">
-      <h1> Tiffany's Portfolio</h1>
-     <div class="content">
-         <p>
-            Welcome to my portfolio! I am a data analyst.
-             <br>I'm adept at solving complex puzzles - connecting scattered pieces to reveal key insights, unraveling the big picture, and driving impactful solutions.
-         </p>
-         <button class="btn-card">
-             <a href="resume.html" class="btn-click"> View Resume </a>
-         </button>
-     </div>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__links"> <!-- place link to python shiny tab -->
+                    Projects
+                    </a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="#aboutme" class="navbar__links">
+                    About Me
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+<!--Homepage Info-->
+        <div class="content">
+            <p>
+                Welcome to my portfolio! I am a data analyst. I'm adept at solving complex puzzles - connecting scattered pieces to reveal key insights, unraveling the big picture, and driving impactful solutions.
+            </p>
+            <div class="description">
+            <a href="#resume"><span>Resume</span></a>
+            </div>
+        </div>
+            </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="1.5 0 10 1">
+  <path d="M0 0 8.4826-.0092C8.0067.1905 8.0067 1.0021 9.001 1.0063 9.9953 1.0021 9.9953.1905 9.4174.012L17 0" fill="#8BAEB1"/>
+</svg>
   </div>
+  </section>
 
-<!--FOOTER SECTION-->
+  <section id="main_nav">
+  <div class="main-navigation">
+             <a href="#homepage" id="clickable_logo">
+                 <div class="square" id="second__square">
+                     <div class="name" id="logo">
+                         <h1> Tiffany Dinh </h1>
+                         <div class="line"></div>
+                         <p>Data Analyst</p>
+                     </div>
+                 </div>
+             </a>
+
+            <nav class="navbar" id="second__nav">  <!-- creating containers: nav.navbar + 'tab' will provide the class & .navbar + 'tab' will provide div-->
+        <!-- .navbar__toggle#mobile-menu --> <!-- . creates a class in the div & # creates the id at the same time-->
+        <!--Title w/ navigation button-->
+
+
+        <!--Menu w/ navigation -->
+                <ul class="navbar__menu" id="second_nav"> <!-- create an unordered list for the menu bar -->
+                    <li class="navbar__item"> <!-- create a list item element for the menu bar -->
+                        <a href="#resume" class="navbar__links"> <!-- create one link for each menu item -->
+                        Resume
+                        </a>
+                    </li>
+
+                    <li class="navbar__item">
+                        <a href="#projects" class="navbar__links"> <!-- place link to python shiny tab -->
+                        Projects
+                        </a>
+                    </li>
+
+                    <li class="navbar__item">
+                        <a href="#aboutme" class="navbar__links">
+                        About Me
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+         </div>
+
+  <section id="resume">
+     <div class="resume__container">
+          <div class="main__resume">
+              <div class="pdf__resume"><a href="TIFFANY_DINH_RESUME_23.pdf">Printable Resume PDF</a></div>
+              <div class="main__resume__container">
+                  <b class="header__section">Professional Experience</b>
+                  <hr class="hr"> <!-- creates horizontal line-->
+
+                  <div class="resume__content">
+                      <div class="work">
+                          <span> <b>Warner Music Group</b> <i>Data Analyst, Quality Control</i> </span>
+
+                          <span>
+                              Aug. 2022 - Aug. 2023
+                          </span>
+                      </div>
+
+                      <p>Instituted data governance standards and protocols to reinforce data quality and integrity across 100B+ streaming and subscription data points. Authored comprehensive documentation and policies to codify data governance and management standards and protocols. Conducted regular audits and reviews, resulting in a 30% increase in data quality compliance.</p>
+
+                      <ul class="experience__list">
+                          <li>Monitored data quality metrics and key performance indicators, achieving a 20% improvement in overall data quality scores</li>
+                          <li>Uncovered actionable business insights through rigorous analysis and interpretation of data to detect key trends, patterns, and anomalies</li>
+                          <li>Established proactive data monitoring mechanisms, reducing the detection and resolution time for data quality issue</li>
+                          <li>Performed ad-hoc root-cause analysis to identified and resolved data issues with strong problem-solving skills and attention to details.</li>
+                         <li>Led meetings and maintained communication with cross-functional teams to drive projects forward and ensure alignment</li>
+                      </ul>
+
+                      <div class="work">
+                          <span> <b>Ingram Micro</b> <i>Student Data Scientist</i> </span>
+                          <span>
+                              Jan. 2022 - June 2022
+                          </span>
+                      </div>
+
+                      <ul class="experience__list">
+                          <li>Designed various machine learning models (Logistic Regression, XGBoost, LightGBM, Random Forest) to rank customer purchase propensity score to identify target customers for sales campaign</li>
+                          <li>Evaluated performance to determine optimal algorithm based on robustness, accuracy, and longevity</li>
+                          <li>Presented recommendations to VP of Data Science to improve current propensity models and sales targeting capabilities</li>
+                      </ul>
+                  </div>
+              </div>
+
+
+              <div class="r__container">
+                  <b class="header__section">Education</b>
+                  <hr class="hr"> <!-- creates horizontal line-->
+
+                  <div class="resume__content">
+                      <b>University of California, Irvine</b>
+
+                      <span class="degree"> Master of Science in Business Analytics <span>2022</span> </span>
+                      <span class="degree"> Bachelor of Chemistry with Concentration in Chemical Biology <span>2019</span> </span>
+                  </div>
+              </div>
+
+              <div class="r__container">
+                  <b class="header__section">Technical Skills</b>
+                  <hr class="hr"> <!-- creates horizontal line-->
+
+                  <div class="resume__content">
+                      <b>Programming Languages:</b> Python, R/RStudio, SQL, Mathematica, Git, HTML, CSS
+                      <br><b>Tools:</b> Tableau, Alteryx, Snowflake, Github, Excel/Google Sheets, Anaconda, Jupyter Notebook, Google Colab
+                      <br><b>Certifications:</b> Data Science Team Lead(DSTL) Certificate
+                  </div>
+              </div>
+
+              <div class="r__container">
+                  <b class="header__section">Skills</b>
+                  <hr class="hr"> <!-- creates horizontal line-->
+
+                  <div class="resume__content">
+                      <ul class="skill__list">
+                          <li>Data Analysis & Statistical Analysis</li>
+                          <li>Data Visualization & Business Intelligence </li>
+                          <li>Data Governance & Data Management</li>
+                          <li>Data Warehouse & ETL Framework</li>
+                          <li>Data Pipelines & Data Processing</li>
+                          <li>Data-driven Decision-making</li>
+                          <li>Skilled Communicator </li>
+                          <li>Cross-functional Collaboration</li>
+                          <li>Stakeholder Management </li>
+                          <li>Attention to Detail</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+     </div>
+  </section>
+
+  <section id="projects">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 1 10 0.6">
+        <path d="M 0 0 H -0.016 L 0 5 L 5 5 C 3.979 3.055 4.957 1.014 7.015 1.048 C 8.918 1.031 10.016 3.02 9.004 4.975 H 13 C 12.983 5.027 13 0.019 12.965 0.019 Z" fill="#f8f8ff"/>
+      </svg>
+      <div class="project__header">Recent Projects</div>
+      <div class="service-section">
+    <!--    Cell image detection   -->
+        <div class="container">
+            <div class="card">
+                <div class="front">
+                    <a href="tabs/project1.html">
+                        <h1>Imaging-Based Malaria Classification</h1>
+                    </a>
+                </div>
+
+                <div class="back">
+                    <a href="tabs/project1.html" class="link">
+                        <h3>Description</h3>
+                    </a>
+                    <a href="tabs/project1.html" class="link">
+                        <p>
+                        With 200 million cases worldwide and approximately
+                        400,000 deaths, this project aims to detect malaria
+                        infected cells through cell images using deep learning algorithms.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<!--    Hotel Class Prediction  -->
+          <div class="container">
+              <div class="card">
+                  <div class="front">
+                    <a href="tabs/project2.html">
+                    <h1>Predicting Hotel Class Ratings</h1>
+                    </a>
+                  </div>
+                <div class="back">
+                    <a href="tabs/project2.html" class="link">
+                        <h3>Description</h3>
+                    </a>
+                    <a href="tabs/project2.html" class="link">
+                        <p>
+                        This project aims to use predictive analytics to predict class
+                        rating for LA hotels from TripAdvisor.
+                        </p>
+                    </a>
+                </div>
+              </div>
+          </div>
+
+<!-- Sentimental Analysis on Hotel Reviews  -->
+          <div class="container">
+              <div class="card">
+                  <div class="front">
+                      <a href="tabs/project3.html">
+                          <h1>Sentimental Analysis: Hotel Reviews</h1>
+                      </a>
+                  </div>
+
+                  <div class="back">
+                      <a href="tabs/project3.html" class="link">
+                          <h3>Description</h3>
+                      </a>
+                      <a href="tabs/project3.html" class="link">
+                          <p>
+                              This project looks into current market trends in the hospitality industry post-pandemic.
+                          </p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+<!--    Flight Delay Prediction   -->
+          <div class="container">
+              <div class="card">
+                  <div class="front">
+                      <a href="tabs/project4.html">
+                          <h1>Predictive Analysis of Flight Delay in NY</h1>
+                      </a>
+                  </div>
+                  <div class="back">
+                      <a href="tabs/project4.html" class="link">
+                          <h3>Description</h3>
+                      </a>
+                      <a href="tabs/project4.html" class="link">
+                          <p>
+                              Ever wonder what affected flight delays? Which airports are more likely to be
+                              affected by flight delays? The objective is to determine contributors to flight delays
+                          </p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="container">
+              <div class="card">
+                  <div class="front">
+                      <a href="https://medium.com/@jacob7141299/disneyland-customer-analysis-an-nlp-approach-to-understanding-international-sentiment-5cb4a7b91260" target="_blank" class="link">
+                          <h1>Sentimental Analysis & Topic Modeling: Disneyland Reviews</h1>
+                      </a>
+                  </div>
+                  <div class="back">
+                      <a href="https://medium.com/@jacob7141299/disneyland-customer-analysis-an-nlp-approach-to-understanding-international-sentiment-5cb4a7b91260" target="_blank" class="link">
+                          <h3>Description</h3>
+                      </a>
+                      <a href="https://medium.com/@jacob7141299/disneyland-customer-analysis-an-nlp-approach-to-understanding-international-sentiment-5cb4a7b91260" target="_blank" class="link">
+                          <p>
+                              The goal of this project is to predict customers purchasing behavior,
+                              enhance guest experience, and provide a productive and efficient marketing
+                              campaign.
+                          </p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="container">
+              <div class="card">
+                  <div class="front">
+                      <a href="tabs/project6.html">
+                          <h1>Capstone Project: Ingram Micro</h1>
+                      </a>
+                  </div>
+                  <div class="back">
+                      <a href="tabs/project6.html" class="link">
+                          <h3>Description</h3>
+                      </a>
+                      <a href="tabs/project6.html" class="link">
+                          <p>
+                              In partnership with Ingram Micro, this project
+                              computed a ranking system for customers purchase propensity and evaluated the robustness of our algorithms.
+                          </p>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="aboutme_section">
+      <div class="aoi">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
+        <path
+                fill="#8BAEB1" fill-opacity="1" d="M0,64L40,58.7C80,53,160,43,240,74.7C320,107,400,181,480,224C560,267,640,277,720,261.3C800,245,880,203,960,170.7C1040,139,1120,117,1200,122.7C1280,128,1360,160,1400,176L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+        </path>
+    </svg>
+        <h2>
+           Area of Interest
+        </h2>
+        <div class="aoi__container">
+            <ul>
+            <li class="interest"> <p> Data Science</p>
+                <ul class="lol">
+                <li>Data Mining</li>
+                <li>Machine Learning</li>
+                <li>NLP</li>
+                <li> Deep Learning</li>
+                </ul>
+            </li>
+
+            <li class="interest"> <p>Data Engineering</p>
+                <ul class="lol">
+                <li>ETL</li>
+                <li>Data Cleaning</li>
+                <li>Data Processing</li>
+                <li>Data Governance</li>
+                <li>Data Profiling</li>
+                </ul>
+            </li>
+
+            <li class="interest"> <p>Business Intelligence</p>
+                <ul class="lol">
+                <li>Data Analysis</li>
+                <li>Data Visualization</li>
+                <li>Data Modeling</li>
+                <li>Data-driven Decision-Making</li>
+                </ul>
+            </li>
+        </ul>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 1430 300"><path fill="#8BAEB1" fill-opacity="1" d="M0,64L40,58.7C80,53,160,43,240,74.7C320,107,400,181,480,224C560,267,640,277,720,261.3C800,245,880,203,960,170.7C1040,139,1120,117,1200,122.7C1280,128,1360,160,1400,176L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+        </div>
+     </div>
+
+     <div class="aboutme__container" id="aboutme">
+        <h2>
+        About Me
+        </h2>
+        <div class="aboutme__content">
+        <img src="img/IMG_0938.JPG" alt="me">
+
+        <p>
+        My name is Tiffany Dinh, and I'm a data analytics professional with experience for extracting impactful insights from data.
+        I hold a master's degree in Business Analytics and a bachelor's in Chemistry from UCI.
+        Outside of work, I'm a novice guitarist and enjoy going on biking or solving jigsaw puzzles on my free time.
+        Currently, a data analyst in the entertainment industry, I enjoy leveraging my analytical skills to solve diverse business challenges and visualize data in compelling ways.
+        I am passionate about continuous learning and staying on top of latest innovations in this field.
+        Seeking to bring my analytical mindset, problem-solving abilities, and passion for data in roles that align with my interest.
+        </p>
+        </div>
+     </div>
+  </section>
+      </section>
+
+<footer>
+    <!--FOOTER SECTION-->
   <div class="footer__container">
      <div class="social__media">
         <h2 id="footer__header">Contact Me</h2>
@@ -89,22 +435,16 @@
      <div class="footer__logo">
         <a href="index.html" id="footer__logo">
               <i>
-                 DinhTechData
+                 DinhTech
               </i>
-        </a>
-        <a href="https://www.pexels.com/photo/close-up-photo-of-puzzle-pieces-8385825/" id="pic_copyright">
-            <i>
-                Photo by Tara Winstead on Pexels
-            </i>
         </a>
      </div>
      <p class="website__right">
-        © DinhTechData 2023. All rights reserved
+        © DinhTech 2023. All rights reserved
      </p>
   </div>
+</footer>
 
-
-
-  <script src = "app.js"></script>
 </body>
+<script src="app.js"></script>
 </html>
