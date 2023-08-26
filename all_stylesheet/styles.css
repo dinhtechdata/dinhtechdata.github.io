@@ -46,7 +46,7 @@ body{
     /*background-color: var(--background-color);*/
     background-image: url("../img/homepage__tarawindstead.jpg");
     background-attachment: fixed;
-    /*min-height: 700px;*/
+    min-height: 800px;
 
     /*border: 1px solid orange;*/
 }
@@ -63,7 +63,7 @@ svg{
     background-attachment: fixed;
 
     width: 100%;
-    min-height:800px;
+    min-height:900px;
 
     display: flex;
     position: relative;
@@ -385,17 +385,7 @@ svg{
     /*min-height: 1300px;*/
     width: 100%;
 
-    position: relative;
-    isolation: isolate;
-}
-
-#projects::after{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: var(--secondary-color);
-    opacity: 0.1;
+    position: static;
 }
 
 #projects svg{
@@ -470,6 +460,7 @@ svg{
 
 .front a{
     text-decoration: none;
+    cursor: pointer;
 }
 
 .back{
@@ -488,7 +479,7 @@ svg{
 
 /*ABOUTME SECTION*/
 #aboutme_section{
-    background-color: #e4e8e8;
+    background-color: #ececec;
     min-height: 1600px;
     width: 100%;
 }
@@ -508,7 +499,8 @@ svg{
 
 .aoi svg{
     display: block;
-    background-color: #e4e8e8;
+    background-color: #ececec;
+    /*e4e8e8*/
     backdrop-filter: opacity(0.3);
     -webkit-backdrop-filter: opacity(0.1);
     /*background-image: url("img copy/projectpage__andreeach.jpg");*/
@@ -602,7 +594,7 @@ img{
 /*FOOTER SECTION*/
 
 footer{
-    background-color: #e4e8e8;
+    background-color: #ececec;
     /*border-top: 1px solid black;*/
 }
 
