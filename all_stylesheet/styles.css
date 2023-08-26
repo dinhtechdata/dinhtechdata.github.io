@@ -382,7 +382,7 @@ svg{
     background-size: 130%;
     background-position: center center;
     /*background-repeat: no-repeat;*/
-    /*min-height: 1300px;*/
+    min-height: 1300px;
     width: 100%;
 
     position: static;
@@ -412,6 +412,7 @@ svg{
     /*gap: 1rem;*/
     justify-content: center;
     padding-bottom: 20px;
+
 }
 /*Container where the card is going to sit */
 .container{
@@ -800,6 +801,13 @@ footer{
 
     .aboutme__container{
         margin-left: 0;
+    }
+
+    #projects{
+        background-repeat: repeat-y;
+        width: 100%;
+        /*height: 800px;*/
+
     }
 
 }
