@@ -665,7 +665,7 @@ footer{
 @media screen and (max-width: 960px) {
     html{
         /*max-width: 99%;*/
-        margin: 0 2%;
+        margin-inline: 2%;
     }
     .homepage__container{
         display: grid;
@@ -805,10 +805,6 @@ footer{
         background-repeat: repeat-y;
         /*height: 800px;*/
 
-    }
-
-    #aboutme_section{
-        margin-inline: 2%;
     }
 
     .aoi__container ul{
