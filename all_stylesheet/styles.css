@@ -258,7 +258,6 @@ svg{
     /*min-height: 1300px;*/
     /*position: relative;*/
     width: 100%;
-
 }
 
 .resume__container{
@@ -318,20 +317,6 @@ svg{
     color: var(--secondary-color);
 }
 
-.main__resume__container{
-
-}
-
-.skill__list{
-    list-style-position: inside;
-    margin-left: 5%;
-    columns: 2;
-   -webkit-columns: 2;
-   -moz-columns: 2;
-    padding-top: 1%;
-}
-
-
 .hr {
     border: 2px solid var(--secondary-color);
     width: 100%;
@@ -343,7 +328,10 @@ svg{
     color: var(--secondary-color);
     font-family: 'Roboto', sans-serif;
     font-size: var(--fs-s);
+}
 
+.main__summary{
+    margin-bottom: 1%;
 }
 
 .experience__list {
@@ -664,16 +652,21 @@ footer{
 /*MAKING WEBSITE COMPATIBLE WITH PHONES AND TABLETS*/
 @media screen and (max-width: 960px) {
     html{
-        /*max-width: 99%;*/
-        margin-inline: 2%;
+        max-width: 99%;
+        /*margin-inline: 2%;*/
     }
     .homepage__container{
         display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 0.7fr 1fr;
+        background-image: none;
+        /*grid-template-columns: auto;*/
+        /*grid-template-rows: 0.7fr 1fr;*/
 
-        overflow-x: hidden;
-        position: relative;
+        /*overflow-x: hidden;*/
+        /*position: relative;*/
+    }
+
+    svg{
+        background: #8BAEB1;
     }
 
     .header{
@@ -728,7 +721,7 @@ footer{
         height: 60vh;
         font-size: var(--fs-ms);
         border: 1px solid black;
-        transform: translate(-8%, 0);
+        transform: translate(-70%, 0);
 
     }
     .navbar__text{
