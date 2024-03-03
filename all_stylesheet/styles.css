@@ -30,8 +30,11 @@ html{
 body{
     /*border: 1px solid red;*/
     /*overflow-x: hidden;*/
-    background-color: ghostwhite;
-    width: 100%;
+    background-color: #f8f8ff;
+    /*width: 100%;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     /*height: 1300px;*/
     /*padding: 0 20px;*/
     /*border: 1px solid black;*/
@@ -54,6 +57,7 @@ body{
 svg{
     background-color: #f8f8ff;
     /*box-shadow: 10px 50px 50px var(--secondary-color);*/
+    /*width: 100%;*/
 }
 
 .header{
@@ -146,6 +150,7 @@ svg{
     background-position: 110%;
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 10%;
 
@@ -273,6 +278,7 @@ svg{
 
 .main-navigation{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
@@ -344,6 +350,7 @@ svg{
 .work{
     white-space: nowrap;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -367,9 +374,8 @@ svg{
 /*PROJECT SECTION*/
 #projects{
     background-image: url("../img/projectpage__andreeach.jpg");
-    background-size: 130%;
-    background-position: center center;
-    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-position: center;
     min-height: 1300px;
     width: 100%;
 
@@ -398,8 +404,11 @@ svg{
     grid-template-columns: repeat(auto-fit, 400px);
     gap: 30px;
     /*gap: 1rem;*/
-    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding-top: 10px;
     padding-bottom: 20px;
+    padding-inline: 2%;
 
 }
 /*Container where the card is going to sit */
@@ -558,19 +567,19 @@ svg{
 
 .aboutme__content{
     padding: 0 3%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 3%;
 }
 
 img{
-    /*align-items: t;*/
     float: left;
     width: 400px;
     height: 400px;
     margin: 20px;
     shape-outside: circle();
     clip-path: circle();
-    /*object-fit: cover;*/
+    object-fit: cover;
 }
 
 .aboutme__content p{
@@ -651,22 +660,25 @@ footer{
 
 /*MAKING WEBSITE COMPATIBLE WITH PHONES AND TABLETS*/
 @media screen and (max-width: 960px) {
-    html{
-        max-width: 99%;
-        /*margin-inline: 2%;*/
+    body{
+        /*overflow-x: hidden;*/
+        width: 100%
     }
     .homepage__container{
-        display: grid;
-        background-image: none;
-        /*grid-template-columns: auto;*/
+        /*background-image: none;*/
+        grid-template-columns: minmax(100px, 1fr);
         /*grid-template-rows: 0.7fr 1fr;*/
 
         /*overflow-x: hidden;*/
         /*position: relative;*/
     }
 
-    svg{
-        background: #8BAEB1;
+    .right__side{
+        padding: 10% 0;
+    }
+
+    #circle{
+        display: none;
     }
 
     .header{
@@ -690,10 +702,6 @@ footer{
         position: fixed;
         z-index: 1000;
         width: 100%; /*width of the whole navigation menu */
-    }
-
-    #projects{
-        z-index: -999;
     }
 
     .navbar__menu {
@@ -786,8 +794,12 @@ footer{
     }
 
     .main__resume{
-        padding-inline: 30px;
+        padding: 10% 8% 10% 1%;
         min-height: max-content;
+    }
+
+    .pdf__resume{
+        padding-right: 10%;
     }
 
     .main-navigation{
@@ -795,19 +807,46 @@ footer{
     }
 
     #projects{
-        background-repeat: repeat-y;
-        /*height: 800px;*/
+        background-size: cover;
+        background-position: 60% 0;
+        /*height: 1800px;*/
 
+    }
+
+    .service-section{
+        grid-template-columns: minmax(50px, 1fr);
     }
 
     .aoi__container ul{
         flex-direction: column;
-        margin-inline: 2%;
+        padding: 0 10% 0 5%;
     }
 
-    .aboutme__content{
+    .interest{
+        margin-bottom: 5%;
+    }
+
+    .aboutme__container{
+        background-color: #ececec;
+        margin: 1% 5% 0 0;
+
+    }
+
+    .aboutme__container h2{
+        color: var(--third-color);
+    }
+
+    .aboutme__container p{
+        color: #6f8b8d;
+        font-size: var(--fs-ms);
+        padding-bottom: 5%;
+    }
+  .aboutme__content{
         flex-direction: column;
-        padding-bottom: 2%;
+        padding-bottom: 10%;
     }
 
+  img{
+      /*margin-left: 8%;*/
+  }
 }
