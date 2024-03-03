@@ -44,7 +44,7 @@ body{
 
 .homepage__container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%),1fr));
     width: 100%;
     /*background-color: var(--background-color);*/
     background-image: url("../img/homepage__tarawindstead.jpg");
@@ -267,13 +267,7 @@ svg{
 
 .resume__container{
     background-color: ghostwhite;
-}
 
-.pdf__resume{
-    padding-block: 3%;
-    display: flex;
-    justify-content: right;
-    font-family: var(--body-font-1);
 }
 
 .main-navigation{
@@ -284,6 +278,7 @@ svg{
     border-bottom: 2px solid black;
     padding-inline: 5%;
     z-index: 999;
+    width: 100%;
 
     background:transparent;
     backdrop-filter: blur(5px);
@@ -295,8 +290,9 @@ svg{
 }
 
 #second__square{
-    height: 150px;
     width: 150px;
+    height: 150px;
+    /*position: absolute;*/
 }
 
 #second__square:after{
@@ -334,6 +330,13 @@ svg{
     color: var(--secondary-color);
     font-family: 'Roboto', sans-serif;
     font-size: var(--fs-s);
+}
+
+.pdf__resume{
+    padding-block: 3%;
+    display: flex;
+    justify-content: right;
+    font-family: var(--body-font-1);
 }
 
 .main__summary{
@@ -382,9 +385,13 @@ svg{
     position: static;
 }
 
+
 #projects svg{
-    background-color: transparent;
-    z-index: -1;
+    background-color: #ececec;
+    /*background-position: 10%;*/
+    /*border-bottom: 1px solid black;*/
+    /*display: inline-block;*/
+    /*z-index: -1;*/
     /*box-shadow: inset 2px 0 2px  var(--third-color);*/
 }
 
@@ -568,24 +575,22 @@ svg{
 .aboutme__content{
     padding: 0 3%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 3%;
+    grid-template-columns: repeat(auto-fit, minmax(min(375px, 100%), 1fr));
+    align-items: center;
+    justify-items: center;
 }
 
 img{
-    float: left;
-    width: 400px;
-    height: 400px;
-    margin: 20px;
+    width: 350px;
+    /*margin: 20px;*/
     shape-outside: circle();
     clip-path: circle();
-    object-fit: cover;
 }
 
 .aboutme__content p{
     font-size: var(--fs-s);
-    padding-top: 10%;
-    align-items: center;
+    padding: 10%;
+    justify-content: center;
 }
 
 
@@ -663,14 +668,6 @@ footer{
     body{
         /*overflow-x: hidden;*/
         width: 100%
-    }
-    .homepage__container{
-        /*background-image: none;*/
-        grid-template-columns: minmax(100px, 1fr);
-        /*grid-template-rows: 0.7fr 1fr;*/
-
-        /*overflow-x: hidden;*/
-        /*position: relative;*/
     }
 
     .right__side{
@@ -839,14 +836,13 @@ footer{
     .aboutme__container p{
         color: #6f8b8d;
         font-size: var(--fs-ms);
-        padding-bottom: 5%;
-    }
-  .aboutme__content{
-        flex-direction: column;
-        padding-bottom: 10%;
+        padding: 5%;
     }
 
-  img{
-      /*margin-left: 8%;*/
-  }
+    .aboutme__content{
+        flex-wrap: wrap;
+        justify-items: center;
+        align-items: center;
+    }
+
 }
