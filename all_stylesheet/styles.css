@@ -505,11 +505,8 @@ svg{
 .aoi svg{
     display: block;
     background-color: #ececec;
-    /*e4e8e8*/
-    backdrop-filter: opacity(0.3);
-    -webkit-backdrop-filter: opacity(0.1);
-    /*background-image: url("img copy/projectpage__andreeach.jpg");*/
-    /*background-position: bottom;*/
+    /*backdrop-filter: opacity(0.3);*/
+    /*-webkit-backdrop-filter: opacity(0.1);*/
 }
 .aoi h2{
     background-color: var(--secondary-color);
